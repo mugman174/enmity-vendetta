@@ -22,8 +22,10 @@ jobs:
         version: latest
     - run: pnpm i
     - run: pnpm run build
+    - name: What exists
+    - run: ls * */*
     - name: Create release
-      uses: softprops/action-gh-release@v1
+      uses: actions/upload-artifact@v3
       with:
-        tag_name: vmain
-        files: dist/*
+        name: vendetta.js
+        path: dist/*.js
