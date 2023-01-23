@@ -22,7 +22,7 @@ jobs:
         version: latest
     - run: pnpm i
     - run: pnpm run build
-    - name: What exists
+    - run: echo "------------"
     - run: ls * */*
     - name: Create release
       uses: actions/upload-artifact@v3
