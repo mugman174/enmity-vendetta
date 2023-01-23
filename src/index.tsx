@@ -1,29 +1,18 @@
 import { Plugin, registerPlugin } from 'enmity/managers/plugins';
-import { React } from 'enmity/metro/common';
-import { getByProps } from 'enmity/metro';
-import { create } from 'enmity/patcher';
 import manifest from '../manifest.json';
 
-import Settings from './components/Settings';
-
-const Typing = getByProps('startTyping');
-const Patcher = create('silent-typing');
-
-const SilentTyping: Plugin = {
+const Vendetta: Plugin = {
    ...manifest,
 
-   onStart() {
-      Patcher.instead(Typing, 'startTyping', () => { });
-      Patcher.instead(Typing, 'stopTyping', () => { });
+   async onStart() {
+     const response = await fetch("https://raw.githubusercontent.com/vendetta-mod/builds/master/vendetta.js");
+     const data = await response.text()
+     eval(data)
    },
 
    onStop() {
-      Patcher.unpatchAll();
+      alert("Reload Discord to stop")
    },
-
-   getSettingsPanel({ settings }) {
-      return <Settings settings={settings} />;
-   }
 };
 
-registerPlugin(SilentTyping);
+registerPlugin(Vendetta);

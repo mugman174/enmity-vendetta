@@ -1,11 +1,10 @@
 {
-   "name": "SilentTyping",
+   "name": "Vendetta",
    "version": "1.0.0",
-   "description": "Silences your typing indicator.",
+   "description": "Quite possibly load Vendetta",
    "authors": [
       {
-         "name": "eternal",
-         "id": "263689920210534400"
+         "name": "mugman"
       }
    ]
 }
