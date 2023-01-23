@@ -25,5 +25,5 @@ jobs:
     - name: Create release
       uses: softprops/action-gh-release@v1
       with:
-        tag-name: vmain
+        tag_name: vmain
         files: dist/*
