@@ -11,7 +11,7 @@ const Vendetta: Plugin = {
    },
 
    onStop() {
-      alert("Reload Discord to stop")
+      vendetta.unload()
    },
 };
 
